@@ -13,14 +13,15 @@ The approach taken for this project is to compare three supervised learning algo
 The reason for selecting these three models, the rationale behind it and the approach are depicted further in the following sections, and in the associated model card. 
 
 The project consist of:
-- This README file introducing the project
-- A model card descibing the models used in more details
+- This README file introducing the project (README.md)
+- A model card descibing the models used in more details (ModelCard.md)
 - A set of Jupyter Notebooks with the actual code:
   - DataAnalysis-Cleaning.ipynb - The first notebook, used for data analysis and cleansing
   - SVM-Model.ipynb - The first model, support vector machines
   - GradientBoosting-Model.ipynb - The second model, gradient boosting
   - RandomForest-Model.ipynb - The third model, random forests
-- A folder with the raw dataset
+- A folder with the raw dataset (RawData/)
+- A folder with the cleansed dataset (CleanData/)
 
 ## DATA
 
