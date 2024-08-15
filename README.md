@@ -19,14 +19,17 @@ The project consist of:
 - A folder with the raw dataset
 
 ## DATA
-A summary of the data you’re using, remembering to include where you got it and any relevant citations. 
-Uttam Adhikari, Shengyi Pan, and Tommy Morris in collaboration with Raymond Borges and Justin Beaver of Oak Ridge National Laboratories (ORNL) have created 3 datasets which include measurements related to electric transmission system normal, disturbance, control, cyber attack behaviors. Measurements in the dataset include synchrophasor measurements and data logs from Snort, a simulated control panel, and relays.
+
+*Beaver, Justin M., Borges-Hink, Raymond C., Buckner, Mark A., "An Evaluation of Machine Learning Methods to Detect Malicious SCADA Communications," in the Proceedings of 2013 12th International Conference on Machine Learning and Applications (ICMLA), vol.2, pp.54-59, 2013. doi: 10.1109/ICMLA.2013.105 link*
+
+The authors referenced here above have created 3 datasets which include measurements related to electric transmission system normal, disturbance, control, cyber attack behaviors. Measurements in the dataset include synchrophasor measurements and data logs from Snort, a simulated control panel, and relays.
 
 The dataset can be found [here](https://sites.google.com/a/uah.edu/tommy-morris-uah/ics-data-sets). 
 The dataset used for this specific exercise is the three-classes labeled dataset, a binary and multi-class datasets are also available.
 
 The architecture of the Industrial Control System these datasets were extracted from is as follows:
 
+![image](https://github.com/user-attachments/assets/756d186f-1a36-4b05-b0a6-23e8f33422ff)
 
 
 ## MODEL 
