@@ -15,7 +15,11 @@ The reason for selecting these three models, the rationale behind it and the app
 The project consist of:
 - This README file introducing the project
 - A model card descibing the models used in more details
-- A set of Jupyter Notebooks with the actual code 
+- A set of Jupyter Notebooks with the actual code:
+  - DataAnalysis-Cleaning.ipynb - The first notebook, used for data analysis and cleansing
+  - SVM-Model.ipynb - The first model, support vector machines
+  - GradientBoosting-Model.ipynb - The second model, gradient boosting
+  - RandomForest-Model.ipynb - The third model, random forests
 - A folder with the raw dataset
 
 ## DATA
