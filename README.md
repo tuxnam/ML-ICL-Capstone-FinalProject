@@ -31,9 +31,54 @@ The architecture of the Industrial Control System these datasets were extracted 
 
 ![image](https://github.com/user-attachments/assets/756d186f-1a36-4b05-b0a6-23e8f33422ff)
 
+Power System Attack Datasets - Mississippi State University and Oak Ridge National Laboratory - 4/15/2014
+There are three datasets contained in this folder. They are made from one initial dataset consisting of fifteen sets with 37 power system
+event scenarios in each. The multiclass datasets are in ARFF format for easy use with Weka and the others are in CSV format also
+compatible with Weka. The 37 scenarios are divided into Natural Events (8), No Events (1) and Attack Events (28). The datasets were
+randomly sampled at one percent and grouped into:
+ Binary
+ Three-class and
+ Multiclass datasets.
+The figure below shows the power system framework configuration used in generating these scenarios. In the network diagram we
+have several components, firstly, G1 and G2 are power generators. R1 through R4 are Intelligent Electronic Devices (IEDs) that can
+switch the breakers on or off. These breakers are labeled BR1 through BR4. We also have two lines. Line One spans from breaker one
+(BR1) to breaker two (BR2) and Line Two spans from breaker three (BR3) to breaker four (BR4). Each IED automatically controls
+one breaker. R1 controls BR1, R2 controls BR2 and son on accordingly. The IEDs use a distance protection scheme which trips the
+breaker on detected faults whether actually valid or faked since they have no internal validation to detect the difference. Operators can
+also manually issue commands to the IEDs R1 through R4 to manually trip the breakers BR1 through BR4. The manual override is
+used when performing maintenance on the lines or other system components.
+Types of Scenarios:
+1. Short-circuit fault – this is a short in a power line and can occur in various locations along the line, the location is indicated
+by the percentage range.
+2. Line maintenance –one or more relays are disabled on a specific line to do maintenance for that line.
+3. Remote tripping command injection (Attack) – this is an attack that sends a command to a relay which causes a breaker to
+open. It can only be done once an attacker has penetrated outside defenses.
+4. Relay setting change (Attack) – relays are configured with a distance protection scheme and the attacker changes the setting
+to disable the relay function such that relay will not trip for a valid fault or a valid command.
+5. Data Injection (Attack) – here we imitate a valid fault by changing values to parameters such as current, voltage, sequence
+components etc. This attack aims to blind the operator and causes a black out
+
+For the dataset we have picked, three classes, the labels are as follows:
+
+![image](https://github.com/user-attachments/assets/6cba4ca5-1bfe-47aa-891d-6a7dd4ecd518)
+
+THe dimensionality of the data is: 128 features, one prediction column and 78377 rows. 
+
+The data is highly unbalanced:
+
+Attack      0.7102
+Natural     0.2336
+NoEvents    0.0562
 
 ## MODEL 
-A summary of the model you’re using and why you chose it. 
+
+We have chosen to use supervised learning and take the approach of a classification problem. We have chosen to use and compare three models from the wide range of classification models available, based on the nature of the data, the dataset, the course learning material, but also to understand the effects of dataset properties such as class imbalance on multiple classification techniques. The data is highly unbalanced and we therefore considered models which should not be affected too much by the imbalance or have proper methods to handle it. 
+
+The three models are:
+
+- Random Forests: Robust to imbalanced data due to ensemble nature.
+- Gradient Boosting (e.g., XGBoost, LightGBM): Handles class imbalance well.
+- Support Vector Machines (SVM) with Balanced Class Weights: Adjusts class weights to account for imbalance3.
 
 ## HYPERPARAMETER OPTIMSATION
 Description of which hyperparameters you have and how you chose to optimise them. 
