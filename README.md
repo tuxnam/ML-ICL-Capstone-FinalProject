@@ -22,7 +22,7 @@ The project consist of:
 A summary of the data you’re using, remembering to include where you got it and any relevant citations. 
 Uttam Adhikari, Shengyi Pan, and Tommy Morris in collaboration with Raymond Borges and Justin Beaver of Oak Ridge National Laboratories (ORNL) have created 3 datasets which include measurements related to electric transmission system normal, disturbance, control, cyber attack behaviors. Measurements in the dataset include synchrophasor measurements and data logs from Snort, a simulated control panel, and relays.
 
-The dataset can be found [https://sites.google.com/a/uah.edu/tommy-morris-uah/ics-data-sets]{here}. 
+The dataset can be found [here]{https://sites.google.com/a/uah.edu/tommy-morris-uah/ics-data-sets}. 
 The dataset used for this specific exercise is the three-classes labeled dataset, a binary and multi-class datasets are also available.
 
 The architecture of the Industrial Control System these datasets were extracted from is as follows:
