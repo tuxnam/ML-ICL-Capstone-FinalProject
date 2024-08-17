@@ -18,9 +18,9 @@ The project consist of:
 - A more detailed analysis of the dataset (data_sheet.md)
 - A set of Jupyter Notebooks with the actual code:
   - DataAnalysis-Cleaning.ipynb - The first notebook, used for data analysis and cleansing
-  - SVM-Model.ipynb - The first model, support vector machines
-  - GradientBoosting-Model.ipynb - The second model, gradient boosting
-  - RandomForest-Model.ipynb - The third model, random forests
+  - Model-SVM.ipynb - The first model, support vector machines
+  - Model-GradientBoosting.ipynb - The second model, gradient boosting
+  - Model-RandomForest.ipynb - The third model, random forests
 - A folder with the raw dataset (RawData/)
 - A folder with the cleansed dataset (CleanData/)
 
