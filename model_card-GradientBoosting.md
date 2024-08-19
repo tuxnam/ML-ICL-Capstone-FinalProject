@@ -1,4 +1,4 @@
-# Model Card
+# Model Card - Gradient Boosting
 
 See the [example Google model cards](https://modelcards.withgoogle.com/model-reports) for inspiration. 
 
