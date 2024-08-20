@@ -14,13 +14,16 @@ The reason for selecting these three models, the rationale behind it and the app
 
 The project consist of:
 - This README file introducing the project (README.md)
-- A model card descibing the models used in more details (model_card.md)
+- A model card descibing each model used in more details, the trade-offs, performances and hyperparameters
+  - Model_card-SVM.md - Support Vector Machines model
+  - Model_card-GradientBoosting.md - Gradient Boosting model
+  - Model_card-RandomForest.md - Random Forest model
 - A more detailed analysis of the dataset (data_sheet.md)
 - A set of Jupyter Notebooks with the actual code:
   - DataAnalysis-Cleaning.ipynb - The first notebook, used for data analysis and cleansing
   - Model-SVM.ipynb - The first model, support vector machines
   - Model-GradientBoosting.ipynb - The second model, gradient boosting
-  - Model-RandomForest.ipynb - The third model, random forests
+  - Model-RandomForest.ipynb - The third model, random forest
 - A folder with the raw dataset (RawData/)
 - A folder with the cleansed dataset (CleanData/)
 
@@ -84,17 +87,18 @@ The three models are:
 
 - Random Forests: Robust to imbalanced data due to ensemble nature.
 - Gradient Boosting (e.g., XGBoost, LightGBM): Handles class imbalance well.
-- Support Vector Machines (SVM) with Balanced Class Weights: Adjusts class weights to account for imbalance3.
+- Support Vector Machines (SVM) with Balanced Class Weights: Adjusts class weights to account for imbalance.
 
 ## HYPERPARAMETER OPTIMSATION
-Description of which hyperparameters you have and how you chose to optimise them. 
+
+The hyperparameters and their optimizations are described in each model card respectively. However, we used Bayesian Optimization for Gradient Boosting and Random Forest, and we used Principal Compomnent Analysis with Grid Search for SVM model.
+The idea was to test several techniques for optimization but also paliate to the perfornance trade-offs and computational needs of the models based on the size of the dataset.
+All the models were trained and executed on a Laptop with 64GB of RAM and a 4-core CPU (i7).
+No GPUs or optimized computing resources were used as this was not the intent behind this project.
 
 ## RESULTS
+
 A summary of your results and what you can learn from your model 
 
 You can include images of plots using the code below:
 ![Screenshot](image.png)
-
-## (OPTIONAL: CONTACT DETAILS)
-If you are planning on making your github repo public you may wish to include some contact information such as a link to your twitter or an email address. 
-
