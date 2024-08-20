@@ -36,7 +36,7 @@ Inputs were therefore scaled using a MinMax scaler (https://scikit-learn.org/sta
 
 Some of the inputs also contained infinite values for some sensor measures, as the number of rows having infinite values was considerable (around 12%), we did not remove the rows to avoid information loss. What we rather did is replace the infinite values by the median of the respective columns:
 
-Number of NaNs:  0
+Number of NaNs:  0 
 float64    113
 int64       15
 Name: count, dtype: int64
@@ -45,12 +45,24 @@ Number of Infinites:  10906
 With the following columns were infintie values were replaced:
 
 Index(['R1-PA:Z', 'R2-PA:Z', 'R3-PA:Z', 'R4-PA:Z'], dtype='object')
-Number of Infinites:  0
 
+Number of Infinites after data pre-processing: 0.
 
 **Output:** Describe the output(s) of your model
 
+The output of the model is the expected classification of the measurements of each sensors in order to determine if the events might be linked to a cyber attack or not. 
+The output can either be: NoEvents, NaturalEvents or AttackEvents.
+
 **Model Architecture:** Describe the model architecture you’ve used
+
+The original (cleaned) dataset, was split between 80% training set, and 20% test set.
+As the dataset was highly imbalanced, we used stratified sampling to avoid bias:
+
+![image](https://github.com/user-attachments/assets/cbce3d78-f0d1-436c-a06c-97db58cb8a0b)
+
+The stratified sampling was simply done using _sklearn_ in Pyhton:
+
+train, test = train_test_split(dataset, test_size=0.2, stratify=dataset.marker) 
 
 ## Performance
 
