@@ -93,12 +93,12 @@ We meadured both on the training set and on the test set each time:
 **Test set**
 
 ![image](https://github.com/user-attachments/assets/db6adb06-df3b-412b-8591-6e66c7847197)
-
-Precision: 0.9304
-Recall: 0.8776
-F1 Score: 0.8996
-Accuracy: 0.91
-
+<br />
+Precision: 0.9304<br />
+Recall: 0.8776<br />
+F1 Score: 0.8996<br />
+Accuracy: 0.91<br />
+<br />
 The overall score is satisfying and Gradient Boosting ends up being the best model in the three compasred models for this project.
 
 ## Limitations and trade-offs
