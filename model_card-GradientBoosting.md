@@ -64,14 +64,48 @@ The stratified sampling was simply done using _sklearn_ in Pyhton:
 
 train, test = train_test_split(dataset, test_size=0.2, stratify=dataset.marker) 
 
+## Hyperparameter Tuning
+
+For this model, we used XGBoost (Extreme Gradient Boosting). When using the XGBClassifier from XGBoost, we can configure several hyperparameters to fine-tune the model. 
+Due to high computing needs for the size of our dataset (128 features for more than 100K rows), GridSearch or RandomSearch are not convenient for hyperparameters tuning. 
+We therefore used Bayesian Optimization.Bayesian optimization trains a machine learning model to predict the best hyperparameters. It is a function optimization: each set of hyperparameters corresponds to a different model performance (e.g., accuracy, AUC). Unlike grid search or random search, Bayesian optimization explores the parameter space systematically and intelligently.
+
+The following parameters resulted from the Bayesian Optimization:
+
+Best hyperparameters: {'learning_rate': 0.3, 'max_depth': 10.0, 'min_child_weight': 1.0}
+
+These were applied to create and fit our model:
+
+![image](https://github.com/user-attachments/assets/4604d094-67ee-46e7-a06c-1b2a68dd1750)
+
+While XGBoost has other parameters, we focused on these for this project.
+
 ## Performance
 
-Give a summary graph or metrics of how the model performs. Remember to include how you are measuring the performance and what data you analysed it on. 
+To measure model performaces, and be able to compare the three models we used for this problem (Gradient Boosting, Random Forest and  Support Vector Machines), we used a Confusion Matrix and computed the following metrics: Precision, Recall, Accuracy amd F1 score.
 
-## Limitations
+We meadured both on the training set and on the test set each time:
 
-Outline the limitations of your model.
+**Training set**
 
-## Trade-offs
+![image](https://github.com/user-attachments/assets/9df3ab04-2744-4325-ad45-7aa1950b1d94)
 
-Outline any trade-offs of your model, such as any circumstances where the model exhibits performance issues. 
+**Test set**
+
+![image](https://github.com/user-attachments/assets/db6adb06-df3b-412b-8591-6e66c7847197)
+
+Precision: 0.9304
+Recall: 0.8776
+F1 Score: 0.8996
+Accuracy: 0.91
+
+The overall score is satisfying and Gradient Boosting ends up being the best model in the three compasred models for this project.
+
+## Limitations and trade-offs
+
+While **Gradient Boosting** offers numerous advantages, it also presents some challenges:
+
+1. **Sensitivity to Hyperparameters**: Proper tuning of hyperparameters is crucial to prevent overfitting and achieve optimal performance. In our case, we focused on four parameters using Bayesian optimization, which might have limited the performace of our models. It would be wise to do the exercise on all the potential parameters. 
+2. **Potential for Overfitting**: Gradient Boosting can overemphasize outliers, leading to overfitting. Cross-validation helps mitigate this issue, which we applied by splitting the training set and the test sets and measuring the F1 score for performance. We also scaled the data to avoid outliers having too much weight on the inputs. 
+3. **Computational Complexity**: Training many trees can be computationally expensive in terms of time and memory. We limited to the default number of trees, 100, which can also impact model performance.
+4. **Limited Interpretability**: Gradient Boosting models are more complex than simpler models like decision trees, making them less interpretable.
