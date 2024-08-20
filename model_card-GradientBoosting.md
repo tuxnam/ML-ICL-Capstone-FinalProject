@@ -2,7 +2,7 @@
 
 Our model's goal is to classify events from sensors of simulated electrical grid pipeline scenarios between three classes: No Events, Natural Events or Attack (cyber-attack) Events. See our (README)[https://github.com/tuxnam/ML-ICL-Capstone-FinalProject/tree/main] and (data sheet)[https://github.com/tuxnam/ML-ICL-Capstone-FinalProject/blob/main/data_sheet.md] description.
 
-This model card describes one of the model used to achieve this goal, Gradient Boosting. 
+This model card describes one of the supervised machine learning technique used to achieve this goal, Gradient Boosting. 
 Gradient Boosting is a machine learning algorithm used for both classification and regression tasks. We used the classifier from the Python library (*XGBoost*)[https://xgboost.readthedocs.io/en/stable/] in this case.
 
 **Principle:** Gradient Boosting works on the idea that combining many weak learners (such as shallow decision trees) can create a more accurate predictor.
