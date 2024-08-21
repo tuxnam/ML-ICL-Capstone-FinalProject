@@ -81,7 +81,7 @@ Attack      0.7102
 Natural     0.2336
 NoEvents    0.0562
 
-## MODEL 
+## MODELS
 
 We have chosen to use supervised learning and take the approach of a classification problem. We have chosen to use and compare three models from the wide range of classification models available, based on the nature of the data, the dataset, the course learning material, but also to understand the effects of dataset properties such as class imbalance on multiple classification techniques. The data is highly unbalanced and we therefore considered models which should not be affected too much by the imbalance or have proper methods to handle it. 
 
