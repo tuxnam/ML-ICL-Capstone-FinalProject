@@ -2,7 +2,8 @@
 
 **GitHub repository:** https://github.com/tuxnam/ML-ICL-Capstone-FinalProject/
 
-## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
+## PROJECT DESCRIPTION
+
 100 words to explain what your project is about to a general audience. 
 
 This project is a capstone undertaking within the Artificial Intelligence and Machine Learning professional program at Imperial College London in 2024.
