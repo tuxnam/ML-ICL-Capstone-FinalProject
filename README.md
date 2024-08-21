@@ -4,8 +4,6 @@
 
 ## PROJECT DESCRIPTION
 
-100 words to explain what your project is about to a general audience. 
-
 This project is a capstone undertaking within the Artificial Intelligence and Machine Learning professional program at Imperial College London in 2024.
 The idea behind the capstone project is to apply one or multiple, superviser or unsupervised, machine learning technique(s) to solve a real-world problem, measure a model's performance and conclude on the analysis.
 
