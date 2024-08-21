@@ -75,9 +75,9 @@ THe dimensionality of the data is: 128 features, one prediction column and 78377
 
 The data is highly unbalanced:
 
-Attack      0.7102
-Natural     0.2336
-NoEvents    0.0562
+- Attack      0.7102
+- Natural     0.2336
+- NoEvents    0.0562
 
 ## MODELS
 
