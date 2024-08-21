@@ -1,5 +1,6 @@
 # Sentinel of the Grid: Revealing Cyber Attacks through Sensor Anomalies
 
+**GitHub repository:** https://github.com/tuxnam/ML-ICL-Capstone-FinalProject/
 
 ## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
 100 words to explain what your project is about to a general audience. 
@@ -9,7 +10,7 @@ The idea behind the capstone project is to apply one or multiple, superviser or 
 
 In recent years, the risk of cyber attacks on Industrial Control Systems (ICS) has intensified. Threats targeting critical infrastructure, living off the land tactics, and gaps in incident response plans pose significant challenges. Proactive defense strategies and a focus on defense-in-depth are crucial. This project aims to detect cyber attacks and anomalies in electric transmission system from 37 power systems using measurements related to electric transmission system normal, disturbance, control, cyber attack behaviors. 
 
-The approach taken for this project is to compare three supervised learning algorithms (K-Nearest Neighbors (k-NN), Gradient Boosting and Support Vecotr Machines) in order to predict the classification of an anomaly between three potential classes: Attack Events, Natural Events, No Events. 
+The approach taken for this project is to compare three supervised learning classification algorithms (Random Forests, Gradient Boosting and Support Vecotr Machines) in order to predict the classification of an anomaly between three potential classes: Attack Events, Natural Events, No Events. 
 The reason for selecting these three models, the rationale behind it and the approach are depicted further in the following sections, and in the associated model card. 
 
 The project consist of:
@@ -98,7 +99,64 @@ No GPUs or optimized computing resources were used as this was not the intent be
 
 ## RESULTS
 
-A summary of your results and what you can learn from your model 
+For this project, a classification problem, we tested and compared three models: Gradient Boosting, Support Vector Machines and Random Forests. 
+For these three models, the following steps were taken:
+- Data analysis
+- Data cleaning
+- Train/test split with stratified sampling
+- Hyperparamer tuning
+- Model training with best hyperparameters found from previous step
+- Model predictions on the train and test sets
+- Performance analysis
 
-You can include images of plots using the code below:
-![Screenshot](image.png)
+***Gradient Boosting**
+
+Accuracy of 91% with a precision of 93% and a recall of 87%.
+F1 score is around 89%.
+
+- Precision: 0.9304
+- Recall: 0.8776
+- F1 Score: 0.8996
+- Accuracy: 0.91
+
+
+**Support Vector Machines**
+
+Accuracy of 87% with a precision of 91% and a lower recall of 71%.
+F1 score is around 83%.
+
+**Random Forest**
+
+Accuracy of 87% with a precision of 91% and a lower recall of 71%.
+F1 score is around 83%.
+
+- Precision: 0.9170
+- Recall: 0.7889
+- F1 Score: 0.8303
+- Accuracy: 0.87
+
+### TRADEOFFS AND FUTURE CONSIDERATIONS
+
+For our dataset on attacks and events on Industrial Control Systems, in the electrical grid context, the best model is **Gradient Boosting**. A summary of the performances can be found here below, all other details are in the respective model cards of this repository. 
+More time and computing resources would allow to further tune the model hyperparameters, and probably get higher performances for each of the models, by limiting trade-offs and information loss (number of folds, number of parameters tuned...).
+
+**Highly imbalanced dataset:** 
+Despite using stratified sampling and scaling the dataset, the labels of the original data were highly imbalanced.
+Cross-validation could help achieve better results and could be considered for future analysis.
+
+An imbalanced dataset can significantly impact the accuracy of our machine learning models:
+
+1. **Bias Toward Majority Class**:
+   - Machine learning algorithms tend to be biased toward the majority class because they have more data points from which to learn.
+   - As a result, the model may perform well on the majority class but struggle to accurately predict the minority class.
+
+2. **Optimization for Balanced Metrics**:
+   - Most machine learning models optimize for balanced metrics (e.g., accuracy, precision, recall), assuming equal representation of classes.
+   - In imbalanced datasets, this optimization can lead to poor performance and misclassification of the minority class.
+
+3. **Consequences of Imbalance**:
+   - Imbalanced datasets can result in biased learning outcomes, where models preferentially detect overrepresented classes.
+   - Real-world incidents, such as the Uber self-driving car collision, highlight the importance of addressing dataset imbalance.
+
+To mitigate these issues, techniques like oversampling, undersampling, and using appropriate evaluation metrics (e.g., F1-score) are essential when dealing with imbalanced data.
+
